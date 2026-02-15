@@ -1,0 +1,14 @@
+node_modules/
+cache/
+artifacts/
+typechain-types/
+
+# Environment variables (private keys!)
+.env
+
+# Coverage
+coverage/
+coverage.json
+
+# Hardhat Ignition
+ignition/deployments/
