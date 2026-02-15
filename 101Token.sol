@@ -5,7 +5,7 @@ contract HarrisonToken{
     // class names are capitalized
 
     // who gets the tokens to begin with
-    address owner:
+    address owner;
 
     mapping (address user => uint256 balance) public balances;
 
