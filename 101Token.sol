@@ -16,7 +16,7 @@ contract HarrisonToken{
         balances[owner] = 1000; //mint the owner 1000 tokens
     }
 
-    function tranfer(unit amount, address recipient) public {
+    function tranfer(uint256 amount, address recipient) public {
         // need 2 parameters 
             // 1- how much you want to send
             // 2 - recipient address
