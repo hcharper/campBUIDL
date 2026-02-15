@@ -26,7 +26,7 @@ contract HarrisonToken{
 
         //check for over/underflow to ensure that end state is the desired result
         require(balances[msg.sender] - amount <= balances[msg.sender]);
-        require(balances[recipient] + amount >= balances[recipient])
+        require(balances[recipient] + amount >= balances[recipient]);
 
         // we also need to add to the recipient account, and subtract frrom the sender account
         balances[msg.sender] -= amount; // ALWAYS SUBTRACT FIRST
