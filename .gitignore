@@ -1,14 +1,9 @@
-node_modules/
+# Foundry
+out/
 cache/
-artifacts/
-typechain-types/
+
+# Dependencies
+lib/
 
 # Environment variables (private keys!)
 .env
-
-# Coverage
-coverage/
-coverage.json
-
-# Hardhat Ignition
-ignition/deployments/
