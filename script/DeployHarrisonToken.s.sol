@@ -2,7 +2,7 @@
 pragma solidity ^0.8.30;
 
 import "forge-std/Script.sol";
-import "../src/101Token.sol";
+import "../src/HarrisonToken.sol";
 
 contract Deploy101Token is Script {
     function run() external {

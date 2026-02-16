@@ -2,7 +2,7 @@
 pragma solidity ^0.8.19;
 
 import "forge-std/Script.sol";
-import "../src/TokenFactory.sol";
+import "../src/TokenShop.sol";
 
 contract DeployTokenShop is Script {
     function run() external {

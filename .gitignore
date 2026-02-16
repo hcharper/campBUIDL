@@ -7,3 +7,6 @@ lib/
 
 # Environment variables (private keys!)
 .env
+
+# Claude Code
+.claude/

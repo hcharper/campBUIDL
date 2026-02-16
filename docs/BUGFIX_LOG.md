@@ -6,7 +6,7 @@ Track bugs found and fixed so they don't happen again.
 
 ### BUG-001: Chainlink import path outdated
 - **Date:** 2026-02-15
-- **File:** `contracts/TokenFactory.sol`
+- **File:** `src/TokenShop.sol` (originally `contracts/TokenFactory.sol`)
 - **Problem:** Import `@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol` fails with newer `@chainlink/contracts` package (v1.5+).
 - **Fix:** Updated path to `@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol` (Chainlink moved the interface to a `shared` subdirectory).
 - **Lesson:** Chainlink reorganized their contract structure. Always check `node_modules/@chainlink` for actual paths when imports fail.

@@ -4,13 +4,13 @@ Solidity smart contracts built during ETH Denver Camp BUIDL. Uses Foundry (Forge
 
 ## Contracts
 
-### HarrisonToken (`101Token.sol`)
+### HarrisonToken (`HarrisonToken.sol`)
 A basic token contract with manual balance tracking. Mints 1000 tokens to the deployer and supports transfers between addresses.
 
 ### Token (`Token.sol`)
 An ERC20 token ("Harrison Token", ticker HH) with role-based access control. Uses OpenZeppelin's ERC20 and AccessControl. Has a MINTER_ROLE so authorized contracts (like TokenShop) can mint tokens. 2 decimal places.
 
-### TokenShop (`TokenFactory.sol`)
+### TokenShop (`TokenShop.sol`)
 A token shop that lets users buy tokens by sending ETH. Uses the Chainlink ETH/USD price feed on Sepolia (`0x694AA1769357215DE4FAC081bf1f309aDC325306`) to calculate how many tokens to mint per transaction. Token price is $2.00 USD.
 
 ### myNFT (`NFT.sol`)
@@ -59,16 +59,48 @@ forge build
    forge script script/DeployNFT.s.sol --rpc-url sepolia --broadcast --private-key $PRIVATE_KEY
    ```
 
+## Scaffold-ETH 2
+
+A full-stack dApp development environment lives in `scaffold-eth/`. It includes a Next.js frontend and its own Foundry setup.
+
+```bash
+cd scaffold-eth
+
+# Start local chain
+yarn chain
+
+# Deploy contracts (in another terminal)
+yarn deploy
+
+# Start frontend (in another terminal)
+yarn start
+```
+
 ## Project Structure
 
 ```
-src/             - Solidity smart contracts
-script/          - Foundry deployment & interaction scripts
-lib/             - Dependencies (forge-std, OpenZeppelin, Chainlink)
-docs/
-  notes/         - Learning notes from sessions
-  DEPLOYED_ADDRESSES.md
-  BUGFIX_LOG.md
+src/                          - Solidity smart contracts
+  HarrisonToken.sol             Basic token with manual balance tracking
+  Token.sol                     ERC20 token (OpenZeppelin + AccessControl)
+  TokenShop.sol                 Buy tokens with ETH (Chainlink price feed)
+  NFT.sol                       Custom NFT contract (Polygon shapes)
+script/                       - Foundry deployment scripts
+  DeployHarrisonToken.s.sol
+  DeployToken.s.sol
+  DeployTokenShop.s.sol
+  DeployNFT.s.sol
+  GrantMinterRole.s.sol
+lib/                          - Dependencies (forge-std, OpenZeppelin, Chainlink)
+docs/                         - Documentation
+  DEPLOYED_ADDRESSES.md         Deployed contract addresses on Sepolia
+  BUGFIX_LOG.md                 Bug tracking log
+  notes/                        Learning notes from sessions
+scaffold-eth/                 - Scaffold-ETH 2 full-stack dApp
+  packages/
+    foundry/                    Contracts & deploy scripts
+    nextjs/                     Next.js frontend
+foundry.toml                  - Forge configuration
+remappings.txt                - Import path remappings
 ```
 
 ## Network
